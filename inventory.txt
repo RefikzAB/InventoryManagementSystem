@@ -1,0 +1,10 @@
+brand           size   condition   price   color
+Jordan 4        11     New         375     Black/Yellow
+Nike Vapormax   9      New         210     White
+Nike Vapormax.  9      New         210     white
+Nike Trainers.  10     Used        210     White
+Adidas XS       8      New         250     Gray
+LV Trainers     10     Used        800     Gray
+Jordan 1        8      Used        175     Black/Red
+Yeezy 500       7      Used        300     Black
+Yeezy 350       11     New         300     Blue
