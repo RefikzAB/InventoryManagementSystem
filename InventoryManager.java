@@ -45,6 +45,49 @@ public class InventoryManager {
                     String adminPassword = scanner.nextLine();
                 }
             }
+
         }
     }
+    public static Inventory[] readInventoryFromFile(String fileName) throws IOException {
+
+        // Create a File object for the inventory file
+        File inventoryFile = new File(fileName);
+
+        // Create a FileReader object for the inventory file
+        FileReader fileReader = new FileReader(inventoryFile);
+
+        // Create a BufferedReader object for the inventory file
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+        // Create an array to store the inventory items
+        Inventory[] inventories = new Inventory[0];
+
+        // Read each line from the inventory file
+        String line;
+        while ((line = bufferedReader.readLine()) != null) {
+
+            // Split the line into the inventory item's properties
+            String[] properties = line.split(",");
+
+            // Create a new Inventory object
+            Inventory inventory = new Inventory();
+            inventory.setProductName(properties[0]);
+            inventory.setBrand(properties[1]);
+            inventory.setSize(properties[2]);
+            inventory.setColor(properties[3]);
+            inventory.setCondition(properties[4]);
+            inventory.setPrice(Integer.parseInt(properties[5]));
+
+            // Add the inventory item to the array
+            inventories = Arrays.copyOf(inventories, inventories.length + 1);
+            inventories[inventories.length - 1] = inventory;
+        }
+
+        // Close the buffered reader
+        bufferedReader.close();
+
+        // Return the array of inventory items
+        return inventories;
+    }
+
 }
